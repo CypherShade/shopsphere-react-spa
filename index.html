@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ShopSphere - a fast, accessible product catalog built with React, Redux Toolkit and React Router." />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Warm up connections to the API and image CDN to cut LCP latency -->
+    <link rel="preconnect" href="https://dummyjson.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.dummyjson.com" />
+    <link rel="dns-prefetch" href="https://cdn.dummyjson.com" />
+    <title>ShopSphere | React SPA</title>
+    <script>
+      // Apply the saved theme before first paint to avoid a flash / layout shift
+      try {
+        var t = JSON.parse(localStorage.getItem('ss-theme'));
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
