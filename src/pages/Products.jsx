@@ -122,6 +122,7 @@ export default function Products() {
         <StateBox title="No products found">Try a different search term or clear the filters.</StateBox>
       ) : (
         <div className={loading ? 'is-refreshing' : undefined} aria-busy={loading}>
+          <h2 className="sr-only">Results</h2>
           <ProductGrid products={visible} />
         </div>
       )}

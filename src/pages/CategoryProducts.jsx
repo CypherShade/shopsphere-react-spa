@@ -48,6 +48,7 @@ export default function CategoryProducts() {
         </StateBox>
       ) : (
         <>
+          <h2 className="sr-only">Products in {name}</h2>
           {items.length > 0 && <ProductGrid products={items} />}
           {loading && <div className="spacer-top"><GridSkeleton count={items.length ? 4 : BATCH} /></div>}
         </>

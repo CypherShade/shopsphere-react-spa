@@ -17,7 +17,10 @@ export default function Wishlist() {
           Tap the heart on any product to save it here.
         </StateBox>
       ) : (
-        <ProductGrid products={items} eager={false} />
+        <>
+          <h2 className="sr-only">Saved products</h2>
+          <ProductGrid products={items} eager={false} />
+        </>
       )}
     </div>
   );

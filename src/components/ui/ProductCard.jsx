@@ -29,16 +29,21 @@ function ProductCard({ product, priority = false }) {
 
   return (
     <article className="card product-card">
+      {/* Decorative duplicate of the title link: hidden from keyboard & screen readers */}
       <Link
         to={`/products/${product.id}`}
         className="product-card__media"
         onMouseEnter={onIntent}
-        onFocus={onIntent}
-        aria-label={product.title}
+        tabIndex={-1}
+        aria-hidden="true"
       >
         <SmartImage src={product.thumbnail} alt="" width={300} height={300} priority={priority} />
-        {sale && <span className="badge badge--sale">-{Math.round(product.discountPercentage)}%</span>}
       </Link>
+      {sale && (
+        <span className="badge badge--sale product-card__badge">
+          -{Math.round(product.discountPercentage)}%<span className="sr-only"> off</span>
+        </span>
+      )}
       <button
         type="button"
         className={`icon-btn product-card__wish ${wished ? 'is-active' : ''}`}
@@ -51,7 +56,7 @@ function ProductCard({ product, priority = false }) {
       <div className="product-card__body">
         <p className="product-card__cat">{titleCase(product.category)}</p>
         <h3 className="product-card__title">
-          <Link to={`/products/${product.id}`} onMouseEnter={onIntent}>
+          <Link to={`/products/${product.id}`} onMouseEnter={onIntent} onFocus={onIntent}>
             {product.title}
           </Link>
         </h3>
