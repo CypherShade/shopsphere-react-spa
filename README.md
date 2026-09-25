@@ -2,6 +2,10 @@
 
 DigiHust Frontend Internship, **Assignment 3 (Days 11–15)**: Complex React UI Engineering, State Optimization & Performance Metrics.
 
+- **Live demo:** https://shopsphere-react-spa.vercel.app
+- **Repository:** https://github.com/CypherShade/shopsphere-react-spa
+- **Submitted by:** Muhammad Haris (DGH2600155)
+
 ShopSphere is a product catalog and storefront. It uses live data from the public [DummyJSON](https://dummyjson.com) REST API and demonstrates:
 
 - global state with Redux Toolkit and the Context API

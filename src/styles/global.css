@@ -78,7 +78,8 @@ code { background: var(--surface-2); padding: .1em .4em; border-radius: 6px; fon
 
 /* ============ Layout helpers ============ */
 .container { width: min(1200px, 100% - 32px); margin-inline: auto; }
-.main { flex: 1; }
+/* Keep the footer below the fold while routes/data load, so it never shifts into view (CLS) */
+.main { flex: 1; min-height: calc(100vh - var(--nav-h)); }
 .page { padding-block: 32px 64px; }
 .section { padding-block: 24px; }
 .section__head, .page__head {
@@ -274,7 +275,7 @@ select, .field input {
 .checkbox { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 500; }
 .checkbox input { width: 18px; height: 18px; accent-color: var(--primary); }
 
-.pagination { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 36px; }
+.pagination { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 36px; min-height: 40px; }
 .pagination__page { min-width: 42px; }
 .pagination__page.is-active { background: var(--primary); color: #fff; border-color: var(--primary); }
 .pagination__gap { align-self: center; padding: 0 4px; color: var(--muted); }

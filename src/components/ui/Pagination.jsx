@@ -17,7 +17,8 @@ function pageWindow(current, total, radius = 1) {
 
 function Pagination({ page, totalPages, onChange }) {
   const pages = useMemo(() => pageWindow(page, totalPages), [page, totalPages]);
-  if (totalPages <= 1) return null;
+  // Keep the bar's space reserved even with a single page, so results changing never shift the layout
+  if (totalPages <= 1) return <div className="pagination" aria-hidden="true" />;
 
   return (
     <nav className="pagination" aria-label="Pagination">
